@@ -5,5 +5,5 @@ notifications:
     email: false
 sudo: false
 script:
-    - g++ main.cc
+    - g++ main.c
     - ./a.out

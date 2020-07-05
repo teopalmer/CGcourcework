@@ -3,41 +3,37 @@
 
 int main()
 {
-    int ch;
-    int n, f0 = 0, f1 = 1, c = 2;
-    int x;
-    ch = scanf("%d", &n);
-    if (ch != 1)
+    float x1, y1, x2, y2;
+    float xa, ya, k = 1;
+    int res = 1;
+    int ch = 6;
+    //ch = scanf("%f %f %f %f %f %f", &x1, &y1, &x2, &y2, &xa, &ya);
+    x1 = 2;
+    y1 = 2;
+    x2 = 5;
+    y2 = 9;
+    if (ch != 6)
     {
-        puts("Input error");
+        printf("Input error");
         return 11;
     }
-    if ((n < 0) || (n > 50))
+    if ((x1 == x2) && (y1 == y2))
     {
-        puts("Input error");
+        printf("Input error");
         return 22;
     }
     else
     {
-        if (n == 0)
+        k = (x1 - xa) * (y2 - y1) - (x2 - x1) * (y1 - ya);
+        if (k > 0)
         {
-            printf("0");
+            res = 0;
         }
-        else if (n == 1)
+        if (k < 0)
         {
-            printf("1");
+            res = 2;
         }
-        else
-        {
-            while (c <= n)
-            {
-                c++;
-                x = (f0 + f1);
-                f0 = f1;
-                f1 = x;
-            }
-            printf("%d", x);
-        }
+        printf("%d", res);
         return 0;
     }
 }
